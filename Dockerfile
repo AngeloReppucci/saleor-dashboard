@@ -4,7 +4,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 ARG APP_MOUNT_URI
-ARG API_URI
+ARG API_URI=${API_URI}
 ARG STATIC_URL
 ENV API_URI ${API_URI:-http://localhost:8000/graphql/}
 ENV APP_MOUNT_URI ${APP_MOUNT_URI:-/dashboard/}
